@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import tiktoken
 from openai.embeddings_utils import get_embedding, cosine_similarity
 
 # search through the reviews for a specific product
@@ -19,14 +20,37 @@ def search_keyword(df, keyword, n=3, engine='text-embedding-ada-002'):
         print()
     return results
 
-def embed_article(article, chunk_size=800, chunk_overlap=70, engine='text-embedding-ada-002'):
-    sections = []
-    for chunk_start in range(0, len(article), chunk_size):
-        start = max(0, chunk_start - chunk_overlap)
-        end = min(len(article), chunk_start + chunk_size + chunk_overlap)
-        chunk = article[start:end]
-        # print(f'==> Chunk {start} to {end}')
-        sections.append(chunk)
+def chunk_split(article, chunk_size):
+    encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
+    tokens = encoding.encode(article)
+    chunks = []
+
+    current_chunk = []
+    current_token_count = 0
+
+    for token in tokens:
+        if current_token_count + 1 <= chunk_size:
+            current_chunk.append(token)
+            current_token_count += 1
+        else:
+            chunks.append(encoding.decode(current_chunk))
+            current_chunk = [token]
+            current_token_count = 1
+
+    if current_chunk:
+        chunks.append(encoding.decode(current_chunk))
+
+    return chunks
+
+def embed_article(article, chunk_size=400, engine='text-embedding-ada-002'):
+    # sections = []
+    # for chunk_start in range(0, len(article), chunk_size):
+    #     start = max(0, chunk_start - chunk_overlap)
+    #     end = min(len(article), chunk_start + chunk_size + chunk_overlap)
+    #     chunk = article[start:end]
+    #     # print(f'==> Chunk {start} to {end}')
+    #     sections.append(chunk)
+    sections = chunk_split(article, chunk_size)
 
     df = pd.DataFrame(np.array(sections), columns=['combined'])
     counter = 0

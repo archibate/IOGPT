@@ -1,6 +1,7 @@
 import os
 import json
 import atexit
+import tempfile
 import subprocess
 import traceback
 
@@ -28,13 +29,23 @@ def write_file_content(filename: str, content: str) -> str:
     except:
         return traceback.format_exc()
 
+def append_file_content(filename: str, content: str) -> str:
+    try:
+        with open(filename, 'a') as f:
+            f.write(content)
+        return f'File {filename} appended successfully'
+    except FileNotFoundError:
+        return f'No such file or directory: {filename}'
+    except:
+        return traceback.format_exc()
+
 def list_files(directory: str) -> str:
     try:
         listdir = '\n'.join(os.listdir(directory))
         if listdir:
-            return f'List of directory {directory}:\n' + listdir + '\n* Use @READ if you need to read file content.\n* Use @WRITE if you want to write or create a new file'
+            return f'List of directory {directory}:\n' + listdir + '\n* Use @READ to read file content.\n* Use @WRITE to write or create new file.\n* Use @SHELL to run shell command.'
         else:
-            return f'List of directory {directory}:\n(empty directory)\n* Use @WRITE if you want to create a new file'
+            return f'List of directory {directory}:\n(empty directory)\n* Use @WRITE if you want to create a new file.'
     except FileNotFoundError:
         return f'No such file or directory: {directory}'
     except:
@@ -53,7 +64,7 @@ def google_search(term: str) -> str:
                 output += f'Brief: {res.description}\n'
             if not output:
                 return '(No results found, maybe try a different keyword)'
-            output += '\n* For web page you interested, use @BROWSE <url> to read more.'
+            output += '\n* For web page you interested, use @SUMMARY <url> to show a quick summary of it. Use @LOOKFOR <keywords> IN <url> to search specific information in the page.'
             return output
         except:
             while True:
@@ -76,10 +87,23 @@ def fetch_webpage(url):
     articles[url] = response
     return response
 
+def check_if_js_required(response):
+    if len(response) < 300:
+        return True
+    return False
+
 def browse_webpage(url: str) -> str:
     while True:
         try:
             response = fetch_webpage(url)
+            if check_if_js_required(response):
+                print('==> Starting browser...')
+                while True:
+                    try:
+                        from .browse import browse_dynamic_page
+                        response = browse_dynamic_page(url)
+                    except:
+                        traceback.print_exc()
             return summerize_text(response)
         except:
             while True:
@@ -90,10 +114,14 @@ def browse_webpage(url: str) -> str:
                 if retry == 'q':
                     return traceback.format_exc()
 
-def summerize_file(content, **kwargs):
-    kwargs['thres'] = 800
-    kwargs['paragraphs'] = 4
-    return summerize_text(content, **kwargs)
+def summerize_file(content):
+    if len(content) > 1000:
+        return content[:400] + f'\n...omitted {len(content) - 800} chars...\n' + content[-400:] + '''
+* Output is truncated to save your limited memory. You cannot read full text larger than 1000 chars.'''
+    return content
+    # kwargs['thres'] = 1000
+    # kwargs['paragraphs'] = 4
+    # return summerize_text(content, **kwargs)
 
 def article_lookfor(keyword, url):
     if url not in articles:
@@ -114,10 +142,10 @@ def article_lookfor(keyword, url):
     if not output:
         output = '(no matching results)'
     else:
-        output += '* Unrelated contents are omitted to save your limited memory.'
+        output += '* Unrelated contents are omitted to save your limited memory. Try a significantly different keyword next time you use @LOOKFOR if result becomes repetitive.'
     return output
 
-def summerize_text(text, thres=200, chunk=500, wpc=200, budget=2000, paragraphs=3):
+def summerize_text(text, thres=1000, chunk=500, wpc=200, budget=3000, paragraphs=4):
     if len(text) < thres:
         return text
     if text in summer_cache:
@@ -128,8 +156,9 @@ def summerize_text(text, thres=200, chunk=500, wpc=200, budget=2000, paragraphs=
             print('==> Summerizing...')
             summerizer = OpenAISummarize()
             summary = summerizer.summarize_text(text, max_chunk_size=chunk, max_combined_summary_size=budget, max_words_per_chunk=wpc, max_final_paragraphs=paragraphs)
-            summary = summary + '\n* Above is the summerized text. To save your limited memory, I cannot give you the full text at once. If you are looking for some specific information in the article, use @LOOKFOR <keywords> IN <url> to find chunks containing desired information, or continue to browse other articles.'
+            # summary = summary + '\n* Above is the summerized text to save your limited memory.'
             summer_cache[text] = summary
+            return summary
         except:
             while True:
                 traceback.print_exc()
@@ -140,29 +169,32 @@ def summerize_text(text, thres=200, chunk=500, wpc=200, budget=2000, paragraphs=
                     return text
 
 def execute_shell_command(command: str) -> str:
-    with subprocess.Popen(
-        args=['bash'],
-        stdin=subprocess.PIPE,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-    ) as p:
-        try:
-            command = 'set -e\n' + command
-            input = command.encode()
-            output, error = p.communicate(input)
-            output = output.decode()
-            error = error.decode()
-            if error:
-                if output:
-                    output = output + '\n' + error
-                else:
-                    output = error
-            return output
-            # exitcode = p.returncode
-            # return f'{output}\n(exited {exitcode})' if not output or exitcode else output
-        except:  # Including KeyboardInterrupt, wait handled that.
-            p.kill()
-            return traceback.format_exc()
+    with tempfile.NamedTemporaryFile('w') as f:
+        command = 'set -e\n' + command + '\n'
+        f.write(command)
+        f.flush()
+        # print('==> Execute shell in file:', f.name)
+        with subprocess.Popen(
+            args=['bash', '--', f.name],
+            stdin=subprocess.DEVNULL,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        ) as p:
+            try:
+                output, error = p.communicate()
+                output = output.decode()
+                error = error.decode()
+                if error:
+                    if output:
+                        output = output + '\n' + error
+                    else:
+                        output = error
+                return output
+                # exitcode = p.returncode
+                # return f'{output}\n(exited {exitcode})' if not output or exitcode else output
+            except:  # Including KeyboardInterrupt, wait handled that.
+                p.kill()
+                return traceback.format_exc()
 
 def process_command(command: str) -> str:
     command = command.strip()
@@ -176,6 +208,7 @@ def process_command(command: str) -> str:
     if command.startswith("@READ "):
         filename = command[len("@READ "):]
         filename = filename.strip()
+        filename = os.path.expanduser(filename)
         return summerize_file(read_file_content(filename))
     elif command.startswith("@EXIT "):
         exitcode = command[len("@EXIT "):]
@@ -192,12 +225,28 @@ def process_command(command: str) -> str:
             filename, = filename
             content = ''
         filename = filename.strip()
+        filename = os.path.expanduser(filename)
         content = content.strip()
         return write_file_content(filename, content)
+    elif command.startswith("@APPEND "):
+        filename = command[len("@APPEND "):]
+        filename = filename.split('[[[', maxsplit=2)
+        if len(filename) == 2:
+            filename, content = filename
+            if content.endswith(']]]'):
+                content = content[:-len(']]]')]
+        else:
+            filename, = filename
+            content = ''
+        filename = filename.strip()
+        filename = os.path.expanduser(filename)
+        content = content.strip()
+        return append_file_content(filename, content)
     elif command.startswith("@LIST "):
         directory = command[len("@LIST "):]
         directory = directory.strip()
-        return list_files(directory)
+        directory = os.path.expanduser(directory)
+        return summerize_file(list_files(directory))
     elif command.startswith("@SHELL "):
         cmd = command[len("@SHELL "):]
         cmd = cmd.split('[[[', maxsplit=2)
@@ -208,16 +257,16 @@ def process_command(command: str) -> str:
         if cmd.endswith(']]]'):
             cmd = cmd[:-len(']]]')]
         cmd = cmd.strip()
-        return execute_shell_command(cmd)
+        return summerize_file(execute_shell_command(cmd))
     elif command.startswith("@GOOGLE "):
         keyword = command[len("@GOOGLE "):]
         if expensive():
             return 'WARNING: Please do not run more than three @GOOGLE commands at once, it is expensive'
         return google_search(keyword)
-    elif command.startswith("@BROWSE "):
-        url = command[len("@BROWSE "):]
+    elif command.startswith("@SUMMARY "):
+        url = command[len("@SUMMARY "):]
         if expensive():
-            return 'WARNING: Please do not run more than three @BROWSE commands at once, it is expensive'
+            return 'WARNING: Please do not run more than three @SUMMARY commands at once, it is expensive'
         return browse_webpage(url)
     elif command.startswith("@LOOKFOR "):
         arg = command[len("@LOOKFOR "):]
@@ -288,12 +337,12 @@ def compose_hint(result: str, question: str, curfile: str, rounds: int, continue
 3. Append to file: @APPEND <path> [[[
 <content>
 ]]]
-4. Shell command: @SHELL [[[
+4. Shell command (non-interactive only): @SHELL [[[
 <command>
 ]]]
 5. List directory: @LIST <dir>
 6. Google search: @GOOGLE <term>
-Do not invent new commands not in this list. Utilize @LIST and @READ to discover information. Whenever the user ask for technical terms or concepts that you cannot answer, please always search google for that knowledge.
+* Do not invent new commands not in this list. Utilize @LIST and @READ to discover information. Do not have placeholders like <path_to_file> in your command and ask user to replace. Use @LIST to find the possible path on your own, silently. Predict the user intent, ask user only if you can't find information. Don't try to complete complex tasks in a single round, you may break it down into steps and only perform one step each round. Whenever the user ask for technical terms or concepts that you cannot answer, please use @GOOGLE to search for that knowledge.
 * To solve the problem, you may need to read file content to complete the answer, so feel free to ask me which file you want to read. You don't have to complete the answer in one round, you may first ask some details about my file, for example, asking me to provide the file content. To ask me to provide file content, you need to answer in this format: @READ hello.cpp. After you got enough details to complete the answer, you may write to files. To create or overwrite an file named hello.cpp with <content>, you need to answer in this format: @WRITE hello.cpp [[[
 <content>
 ]]] You should only answer in @ format, without any additional text, no nature languages.'''
@@ -325,8 +374,8 @@ def createbot(model='gpt-3.5-turbo'):
                     temperature=1,
                     top_p=1,
                     n=1,
-                    presence_penalty=0,
-                    frequency_penalty=0,
+                    presence_penalty=0.5,
+                    frequency_penalty=0.5,
                     stream=False)
             except:
                 print('-=-=-=- AI ERROR -=-=-=-')
@@ -346,13 +395,15 @@ def createbot(model='gpt-3.5-turbo'):
             print(response)
             messages.append({'role': 'assistant', 'content': response})
             while True:
-                accept = input('\n(a)ccept (r)eset (p)rompt (q)uit? ')
+                accept = input('\n(a)ccept (r)eset (n)oexec (p)rompt (q)uit? ')
                 if accept == 'a' or not accept:
                     return response
                 if accept == 'p':
                     prompt = input('> ')
                     messages.append({'role': 'user', 'content': prompt})
                     continue
+                if accept == 'n':
+                    return ''
                 if accept == 'r':
                     messages.pop()
                     print('==> REGENERATING')
@@ -375,6 +426,7 @@ def main():
         question = line.rstrip()
         hint = compose_hint(result, question, curfile, rounds, continued)
         answer = bot(hint)
+        print('==> Running...')
         result = process_answer(answer)
         print('-=-=-=- CMD RESULT -=-=-=-')
         print(result)

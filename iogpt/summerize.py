@@ -78,9 +78,10 @@ class OpenAISummarize(object):
             chunks = self.chunk_text(text, max_chunk_size)
             summaries = []
 
+            print(f'==> Got {len(chunks)} chunks to summerize')
             # Summarize each chunk separately using the OpenAI API
             for i, chunk in enumerate(chunks):
-                print(f'=> Summerizing chunk {i + 1}...')
+                print(f'==> Summerizing chunk {i + 1}...')
 
                 prompt = prompt_template.format(chunk)
 
@@ -93,7 +94,7 @@ class OpenAISummarize(object):
                     temperature=0.5,
                 )
 
-                summary = response.choices[0].text.strip()
+                summary = response.choices[0].text.strip()  # type: ignore
                 summaries.append(summary)
 
             combined_summary = " ".join(summaries)
@@ -107,7 +108,7 @@ class OpenAISummarize(object):
 
         cohesion_prompt = f"{final_summary}\n\nTl;dr (max {max_final_paragraphs} paragraphs)"
 
-        print(f'=> Summerizing final answer...')
+        print(f'==> Summerizing final answer...')
 
         response = openai.Completion.create(
             engine=model_engine,
@@ -119,6 +120,6 @@ class OpenAISummarize(object):
             presence_penalty=1,
         )
 
-        rewritten_summary = response.choices[0].text.strip()
+        rewritten_summary = response.choices[0].text.strip()  # type: ignore
 
         return rewritten_summary
