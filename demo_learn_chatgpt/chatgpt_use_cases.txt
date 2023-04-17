@@ -1,0 +1,3 @@
+ChatGPT is an AI chatbot powered by the Generative Pretraining Transformer-3 (GPT-3) model that uses Natural Language Processing (NLP) and Machine Learning (ML) to generate human-like responses to user queries. It has a wide range of use cases such as providing fast and intelligent responses to customer inquiries, generating personalized content, and educating and training students. The tool has a subscription model that offers priority access and faster response speed.
+
+Emeritus offers online AI/ML courses for people who want to understand the latest AI and ML concepts and build a successful career.

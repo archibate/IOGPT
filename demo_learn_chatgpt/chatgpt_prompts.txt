@@ -1,0 +1,5 @@
+1. Generate a conversation between a customer and a ChatGPT-powered chatbot about personalized recommendations for a shopping goal.
+2. Ask ChatGPT to provide a summary of the latest research on the applications of natural language processing.
+3. Write a story about a day in the life of a ChatGPT chatbot helping Snap Inc. reduce costs and increase efficiency.
+4. Ask ChatGPT to generate a list of the top 10 ethical considerations in using artificial intelligence for decision making.
+5. Write a dialogue between two ChatGPT-powered chatbots about their opinions on the future of natural language processing and its applications.

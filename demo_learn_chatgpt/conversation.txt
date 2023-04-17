@@ -1,0 +1,388 @@
+➜  reautoppt python repl.py
+> Search google for ChatGPT.
+==> Thinking...
+-=-=-=- AI RESPONSE -=-=-=-
+@GOOGLE ChatGPT
+
+(a)ccept (r)eset (p)rompt (q)uit? a
+-=-=-=- RESULT -=-=-=-
+
+Title: What is ChatGPT and why does it matter? Here's what you ...
+URL: https://www.zdnet.com/article/what-is-chatgpt-and-why-does-it-matter-heres-everything-you-need-to-know/
+Brief: 4 days ago — ChatGPT is a large language model that uses artificial intelligence to hold text conversat
+ions with users that can feel natural, as if you were ...
+
+Title: What is ChatGPT? Here's how to use the popular AI chatbot
+URL: https://www.digitaltrends.com/computing/how-to-use-openai-chatgpt-text-generation-chatbot/
+Brief: 4 days ago — ChatGPT is a natural language AI chatbot. At its most basic, that means you can ask it any
+ question, and it will answer. ... As opposed to a ...
+
+Title: How Will ChatGPT Shape Business, Society and ...
+URL: https://knowledge.insead.edu/strategy/how-will-chatgpt-shape-business-society-and-employment
+Brief: 1 hour ago — Will next-generation AI systems such as ChatGPT deliver the productivity boost modern econ
+omies need – and are we ready for it?
+
+Title: What is ChatGPT? Here's how to use the popular AI chatbot
+URL: https://www.digitaltrends.com/computing/how-to-use-openai-chatgpt-text-generation-chatbot/
+Brief: 4 days ago — ChatGPT is a natural language AI chatbot. At its most basic, that means you can ask it any
+ question, and it will answer. ... As opposed to a ...
+
+Title: How Will ChatGPT Shape Business, Society and ...
+URL: https://knowledge.insead.edu/strategy/how-will-chatgpt-shape-business-society-and-employment
+Brief: 1 hour ago — Will next-generation AI systems such as ChatGPT deliver the productivity boost modern econ
+omies need – and are we ready for it?
+
+Title: How to use ChatGPT: What you need to know now
+URL: https://www.zdnet.com/article/how-to-use-chatgpt/
+Brief: 4 days ago — ChatGPT is a large language model that uses artificial intelligence to hold text conversat
+ions with users that can feel natural, as if you were ...
+
+Title: What is ChatGPT? Here's how to use the popular AI chatbot
+URL: https://www.digitaltrends.com/computing/how-to-use-openai-chatgpt-text-generation-chatbot/
+Brief: 4 days ago — ChatGPT is a natural language AI chatbot. At its most basic, that means you can ask it any
+ question, and it will answer. ... As opposed to a ...
+
+Title: How Will ChatGPT Shape Business, Society and ...
+URL: https://knowledge.insead.edu/strategy/how-will-chatgpt-shape-business-society-and-employment
+Brief: 1 hour ago — Will next-generation AI systems such as ChatGPT deliver the productivity boost modern econ
+omies need – and are we ready for it?
+
+* For web page you interested, use @BROWSE <url> to read more.
+
+> 
+==> Thinking...
+-=-=-=- AI RESPONSE -=-=-=-
+@BROWSE https://www.zdnet.com/article/what-is-chatgpt-and-why-does-it-matter-heres-everything-you-need-to-know
+/
+
+(a)ccept (r)eset (p)rompt (q)uit? a
+-=-=-=- RESULT -=-=-=-
+ChatGPT is an AI-driven natural language processing tool available free of charge to the public. It is powered
+ by OpenAI's GPT-3.5 series, and with a subscription to ChatGPT Plus, users can access the GPT-4 model. It has
+ some limitations, such as not being aware of events after 2021 or not providing sources for its responses. Bi
+ng Chat, another chatbot service, is powered by OpenAI's GPT-4 model, has access to the internet, and sources 
+back to the sites it pulls information from. Google Bard, another chatbot released by Google, was found to be 
+lacking in its ability to answer questions, even with access to the internet. ChatGPT was found to outperform 
+Google Bard, leading Google to launch a Trusted Tester program to improve its accuracy and reliability.
+
+> \
+==> Thinking...
+-=-=-=- AI RESPONSE -=-=-=-
+@WRITE chatgpt_comparison.txt [[[
+ChatGPT is a natural language processing tool powered by OpenAI's GPT-3.5 series and is available for free to 
+the public. It has some limitations, such as not being aware of events after 2021 or not providing sources for
+ its responses. However, with a subscription to ChatGPT Plus, users can access the GPT-4 model. Compared to Bi
+ng Chat, another chatbot service also powered by OpenAI's GPT-4 model, ChatGPT lacks access to the internet an
+d does not source back to the sites it pulls information from. However, Google Bard, another chatbot released 
+by Google, was found to be lacking in its ability to answer questions, even with access to the internet. In a 
+comparison between ChatGPT and Google Bard, ChatGPT outperforms Google Bard, leading Google to launch a Truste
+d Tester program to improve its accuracy and reliability. 
+]]]
+
+(a)ccept (r)eset (p)rompt (q)uit? a
+-=-=-=- RESULT -=-=-=-
+File chatgpt_comparison.txt written successfully
+
+> Collect more information about ChatGPT.            
+==> Thinking...
+-=-=-=- AI RESPONSE -=-=-=-
+@GOOGLE ChatGPT use cases
+
+(a)ccept (r)eset (p)rompt (q)uit? a
+-=-=-=- RESULT -=-=-=-
+
+Title: Top 8 ChatGPT Use Cases: How is the AI Tool ...
+URL: https://emeritus.org/blog/ai-and-ml-chatgpt-use-cases/
+Brief: 15 Feb 2023 — 1. Ability to Understand and Respond to a Wide Range of Language Inputs · 2. Ability to L
+earn and Improve Over Time · 3. Answer Questions · 4.
+
+Title: 40 ChatGPT Use Cases in 2023
+URL: https://research.aimultiple.com/chatgpt-use-cases/
+Brief: 27 Mar 2023 — ChatGPT has various applications for people, companies and various industries. In this ar
+ticle, we explain the top 40 ChatGPT use cases.
+
+Title: Top 10 Use Cases For ChatGPT In The Banking Industry
+URL: https://www.forbes.com/sites/bernardmarr/2023/03/08/top-10-use-cases-for-chatgpt-in-the-banking-industry/
+Brief: 8 Mar 2023 — Top 10 Use Cases For ChatGPT In The Banking Industry · 1. Customer Service · 2. Fraud Dete
+ction · 3. Loan Origination · 4. Wealth Management · 5.
+
+Title: ChatGPT Usecases - Cookup AI
+URL: https://cookup.ai/chatgpt/usecases/
+Brief: Browse through various use cases that can be solved using ChatGPT. ... ChatGPT Use Cases. List of all t
+he use cases which can be solved via ChatGPT.
+
+Title: 20 Best ChatGPT Use Cases To Grow Your Businesses In ...
+URL: https://writesonic.com/blog/chatgpt-use-cases/
+Brief: 20 Feb 2023 — Here in this blog, we have presented you with the best ChatSonic ChatGPT use cases to hel
+p you professionally and personally.
+
+Title: Top 10 Productive Use Cases of ChatGPT for the Year 2023
+URL: https://www.analyticsinsight.net/top-10-productive-use-cases-of-chatgpt-for-the-year-2023/
+Brief: 31 Jan 2023 — The ChatGPT was specifically developed for the use of digital assistants and chatbots. Co
+mpared to other chatbots ChatGPT can be able to pick ...
+
+Title: ChatGPT: What Are Its Business Use Cases?
+URL: https://www.cio.inc/chatgpt-what-are-its-business-use-cases-a-21314
+Brief: 27 Feb 2023 — ChatGPT: What Are Its Business Use Cases? · Providing fast and accurate responses for cus
+tomer inquiries; · Creating content and marketing copies; ...
+
+Title: What is ChatGPT, and its possible use cases?
+URL: https://www.netsolutions.com/insights/what-is-chatgpt/
+Brief: 27 Dec 2022 — What is ChatGPT, and its possible use cases? · Chatbots: for normal human conversation · 
+Marketing and sales—crafting personalized marketing, ...
+
+Title: 31+ Best Chat GPT Use Cases in Various Industries with ...
+URL: https://www.mlyearning.org/chat-gpt-use-cases/
+Brief: 3 Mar 2023 — Some of the top uses of ChatGPT include generating Ad copies, translation, grading essays,
+ summarizing texts, extracting data, and many more.
+
+* For web page you interested, use @BROWSE <url> to read more.
+
+> 
+==> Thinking...
+-=-=-=- AI RESPONSE -=-=-=-
+@BROWSE https://emeritus.org/blog/ai-and-ml-chatgpt-use-cases/
+
+(a)ccept (r)eset (p)rompt (q)uit? a
+-=-=-=- RESULT -=-=-=-
+ChatGPT is an AI chatbot powered by the Generative Pretraining Transformer-3 (GPT-3) model. It uses Natural La
+nguage Processing (NLP) and Machine Learning (ML) to generate human-like responses to user queries. It can be 
+used for various purposes such as providing fast and intelligent responses to customer inquiries, generating p
+ersonalized content, and educating and training students. OpenAI has recently announced a subscription model f
+or their AI tool ChatGPT that offers priority access and faster response speed. Emeritus offers online AI/ML c
+ourses to help people understand the latest AI and ML concepts and build a successful career.
+
+> 
+==> Thinking...
+-=-=-=- AI RESPONSE -=-=-=-
+@WRITE chatgpt_use_cases.txt [[[
+ChatGPT is an AI chatbot powered by the Generative Pretraining Transformer-3 (GPT-3) model that uses Natural L
+anguage Processing (NLP) and Machine Learning (ML) to generate human-like responses to user queries. It has a 
+wide range of use cases such as providing fast and intelligent responses to customer inquiries, generating per
+sonalized content, and educating and training students. The tool has a subscription model that offers priority
+ access and faster response speed. 
+
+Emeritus offers online AI/ML courses for people who want to understand the latest AI and ML concepts and build
+ a successful career. 
+]]]
+
+(a)ccept (r)eset (p)rompt (q)uit? a
+-=-=-=- RESULT -=-=-=-
+File chatgpt_use_cases.txt written successfully
+
+> Learn about ChatGPT prompt engineering.
+==> Thinking...
+-=-=-=- AI RESPONSE -=-=-=-
+@GOOGLE ChatGPT prompt engineering
+
+(a)ccept (r)eset (p)rompt (q)uit? a
+-=-=-=- RESULT -=-=-=-
+
+Title: Prompt-Engineering-Guide/prompts-chatgpt.md at main
+URL: https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/guides/prompts-chatgpt.md
+Brief: 16 Mar 2023 — ChatGPT is a new model trained by OpenAI that can interact conversationally. This model i
+s trained to follow instructions in a prompt to provide ...
+
+Title: Prompt Engineering with ChatGPT Cheatsheet
+URL: https://www.codecademy.com/learn/intro-to-chatgpt/modules/prompt-engineering-with-chat-gpt/cheatsheet
+Brief: Defining a clear purpose for a prompt can assist in getting useful results. Think about: Tone: How do y
+ou want the output to sound? Funny? Professional? Format: ...
+
+Title: ChatGPT Prompt Engineering with 1200+ Prompts
+URL: https://www.udemy.com/course/chatgpt-prompt-engineering-for-beginners/
+Brief: 2 days ago — ChatGPT Prompt Engineering - How to use Productivity Prompts14 lectures 29min · Copywritin
+g. 02:02 · Email Copy Writer. 01:49 · Email Marketer. 02 ...
+
+Title: Prompt Engineering with ChatGPT Cheatsheet - Codecademy
+URL: https://www.codecademy.com/learn/intro-to-chatgpt/modules/prompt-engineering-with-chat-gpt/cheatsheet
+Brief: Defining a clear purpose for a prompt can assist in getting useful results. Think about: Tone: How do y
+ou want the output to sound? Funny? Professional? Format: ...
+
+Title: ChatGPT Prompt Engineering with 1200+ Prompts | Udemy
+URL: https://www.udemy.com/course/chatgpt-prompt-engineering-for-beginners/
+Brief: 2 days ago — ChatGPT Prompt Engineering - How to use Productivity Prompts14 lectures 29min · Copywritin
+g. 02:02 · Email Copy Writer. 01:49 · Email Marketer. 02 ...
+
+Title: 11 Tips to Take Your ChatGPT Prompts to the Next Level
+URL: https://www.wired.com/story/11-tips-better-chatgpt-prompts/
+Brief: 26 Mar 2023 — ChatGPT is a very capable prompt engineer itself. If you ask it to come up with creative 
+and effective inputs for artificial intelligence ...
+
+Title: ChatGPT Prompt Engineering with 1200+ Prompts
+URL: https://www.udemy.com/course/chatgpt-prompt-engineering-for-beginners/
+Brief: 2 days ago — ChatGPT Prompt Engineering - How to use Productivity Prompts14 lectures 29min · Copywritin
+g. 02:02 · Email Copy Writer. 01:49 · Email Marketer. 02 ...
+
+* For web page you interested, use @BROWSE <url> to read more.
+
+> 
+==> Thinking...
+-=-=-=- AI RESPONSE -=-=-=-
+@BROWSE https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/guides/prompts-chatgpt.md
+
+(a)ccept (r)eset (p)rompt (q)uit? a
+-=-=-=- RESULT -=-=-=-
+ChatGPT is a large language model developed by OpenAI which is capable of generating human-like conversations 
+and text. It has been used in many applications such as question answering, decision making, and sentiment ana
+lysis. This paper will cover the current state of the art of ChatGPT and its applications, as well as the ethi
+cal considerations and potential future directions. Companies like Snap Inc. and Instacart are already using i
+t to reduce costs and increase efficiency. Developers can use the Chat Completion API to integrate conversatio
+nal features into their products ranging from personalized recommendations to open-ended shopping goals. ChatG
+PT can also be interacted with using the Chat Markup Language (ChatML). Recent research has explored the use o
+f ChatGPT for text data augmentation, health answer correctness, and personality assessment.
+
+> 
+==> Thinking...
+-=-=-=- AI RESPONSE -=-=-=-
+@WRITE chatgpt_prompt_engineering.txt [[[
+ChatGPT is a large language model developed by OpenAI that can generate human-like conversations and text. It 
+has numerous applications like question answering, decision making, and sentiment analysis. Several companies 
+such as Snap Inc. and Instacart are using it to increase efficiency and reduce costs.
+
+Developers can integrate conversational features into their products using the Chat Completion API, which offe
+rs personalized recommendations and open-ended shopping goals. ChatGPT can also be interacted with using the C
+hat Markup Language (ChatML).
+
+Moreover, ChatGPT has been used recently for text data augmentation, health answer correctness, and personalit
+y assessment. There are ethical considerations and potential research opportunities in exploring the use of Ch
+atGPT in various industries. 
+]]]
+
+(a)ccept (r)eset (p)rompt (q)uit? 
+-=-=-=- RESULT -=-=-=-
+File chatgpt_prompt_engineering.txt written successfully
+
+> Write some example of good ChatGPT prompts based on information you collected.
+==> Thinking...
+-=-=-=- AI RESPONSE -=-=-=-
+@WRITE chatgpt_prompts.txt [[[
+1. Generate a conversation between a customer and a ChatGPT-powered chatbot about personalized recommendations
+ for a shopping goal.
+2. Ask ChatGPT to provide a summary of the latest research on the applications of natural language processing.
+3. Write a story about a day in the life of a ChatGPT chatbot helping Snap Inc. reduce costs and increase effi
+ciency.
+4. Ask ChatGPT to generate a list of the top 10 ethical considerations in using artificial intelligence for de
+cision making.
+5. Write a dialogue between two ChatGPT-powered chatbots about their opinions on the future of natural languag
+e processing and its applications. 
+]]]
+
+(a)ccept (r)eset (p)rompt (q)uit? a
+-=-=-=- RESULT -=-=-=-
+File chatgpt_prompts.txt written successfully
+
+> Think about more fun ChatGPT use cases.
+==> Thinking...
+-=-=-=- AI RESPONSE -=-=-=-
+@SHELL [[[
+echo "Some fun use cases of ChatGPT could be:"
+echo "1. Ask ChatGPT to come up with a funny joke or pun."
+echo "2. Generate a short story or poem using ChatGPT as a writing prompt."
+echo "3. Use ChatGPT to generate creative and unique product names for a new business or startup."
+echo "4. Ask ChatGPT to come up with a recipe for a strange or unusual food combination."
+echo "5. Have ChatGPT write a personalized song or poem for a friend or loved one."
+]]]
+
+(a)ccept (r)eset (p)rompt (q)uit? r
+==> REGENERATING
+==> Thinking...
+-=-=-=- AI RESPONSE -=-=-=-
+@SHELL [[[
+cat /usr/share/dict/words | grep -x '.\{4,6\}' | shuf -n 5
+]]]
+
+(a)ccept (r)eset (p)rompt (q)uit? a
+-=-=-=- RESULT -=-=-=-
+ambush
+flunky
+spurge
+Fr's
+broody
+
+
+> 
+==> Thinking...
+-=-=-=- AI RESPONSE -=-=-=-
+@WRITE chatgpt_fun_prompts.txt [[[
+1. Ask ChatGPT to write a funny story about an ambush by a group of flunkies and how a hero emerges from the s
+ituation.
+2. Generate a dialogue between two ChatGPT-powered chatbots discussing the pros and cons of eating spurge as a
+ new food trend.
+3. Ask ChatGPT to create a list of 20 French words with their English translations and usage example for Fr's 
+(Franks).
+4. Generate a conversation between ChatGPT and a broody teenager about music, fashion, and pop culture. 
+]]]
+
+(a)ccept (r)eset (p)rompt (q)uit?  
+-=-=-=- RESULT -=-=-=-
+File chatgpt_fun_prompts.txt written successfully
+
+> Search for how to invoke ChatGPT via OpenAI API.
+==> Thinking...
+-=-=-=- AI RESPONSE -=-=-=-
+@GOOGLE OpenAI API ChatGPT invocation
+
+(a)ccept (r)eset (p)rompt (q)uit? a
+-=-=-=- RESULT -=-=-=-
+
+Title: Introducing ChatGPT and Whisper APIs
+URL: https://openai.com/blog/introducing-chatgpt-and-whisper-apis
+Brief: 1 Mar 2023 — Introducing ChatGPT and Whisper APIs. Developers can now integrate ChatGPT and Whisper mod
+els into their apps and products through our API.
+
+Title: OpenAI Chat API Tutorial | Build a Simple AI Project
+URL: https://codesnippet.io/openai-chat-api-tutorial/
+Brief: 3 Feb 2023 — Build a simple chatbot using the OpenAI Chat API. Make a portfolio-worthy project using th
+e same AI language models as ChatGPT!
+
+Title: How to Use OpenAI's ChatGPT API in Node.js
+URL: https://www.codingthesmartway.com/how-to-use-openai-chatgpt-api-in-nodejs/
+Brief: 12 Mar 2023 — In order to be able to make use of OpenAI's API from within a Node.js application we need
+ to retrieve an API key first from the OpenAI dashboard ...
+
+Title: Supercharging Conversations With ChatGPT
+URL: https://getstream.io/blog/build-a-chat-app-with-openai-chatgpt/
+Brief: 8 Dec 2022 — As a chat company, we wanted to check out OpenAI's ChatGPT model by ... Since ChatGPT does
+ not have an official API yet, our work was cut ...
+
+Title: Plugins supported from OpenAI API · Issue #81
+URL: https://github.com/openai/chatgpt-retrieval-plugin/issues/81
+Brief: ... it by querying ChatGPT API instead of using the interface on OpenAI website. ... user the plugin be
+ing invoked as well as the plugin input and outputs .
+
+Title: Supercharging Conversations With ChatGPT
+URL: https://getstream.io/blog/build-a-chat-app-with-openai-chatgpt/
+Brief: 8 Dec 2022 — As a chat company, we wanted to check out OpenAI's ChatGPT model by ... Since ChatGPT does
+ not have an official API yet, our work was cut ...
+
+Title: Plugins supported from OpenAI API · Issue #81
+URL: https://github.com/openai/chatgpt-retrieval-plugin/issues/81
+Brief: ... it by querying ChatGPT API instead of using the interface on OpenAI website. ... user the plugin be
+ing invoked as well as the plugin input and outputs .
+
+* For web page you interested, use @BROWSE <url> to read more.
+
+> 
+==> Thinking...
+-=-=-=- AI ERROR -=-=-=-
+Traceback (most recent call last):
+  File "/home/bate/Codes/reautoppt/repl.py", line 252, in ask
+    try:
+  File "/home/bate/.local/lib/python3.10/site-packages/openai/api_resources/chat_completion.py", line 25, in c
+reate
+    return super().create(*args, **kwargs)
+  File "/home/bate/.local/lib/python3.10/site-packages/openai/api_resources/abstract/engine_api_resource.py", 
+line 153, in create
+    response, _, api_key = requestor.request(
+  File "/home/bate/.local/lib/python3.10/site-packages/openai/api_requestor.py", line 226, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/home/bate/.local/lib/python3.10/site-packages/openai/api_requestor.py", line 619, in _interpret_respo
+nse
+    self._interpret_response_line(
+  File "/home/bate/.local/lib/python3.10/site-packages/openai/api_requestor.py", line 682, in _interpret_respo
+nse_line
+    raise self.handle_error_response(
+openai.error.InvalidRequestError: This model's maximum context length is 4097 tokens. However, your messages r
+esulted in 4612 tokens. Please reduce the length of the messages.
+
+(r)etry (q)uit? q
