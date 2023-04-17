@@ -1,4 +1,8 @@
 trafilatura
 googlesearch-python
-openai-summerize
 openai-python
+tiktoken
+pandas
+numpy
+scikit-learn
+plotly
