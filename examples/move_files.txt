@@ -1,0 +1,35 @@
+➜  reautoppt git:(master) ✗ python main.py
+> Check the list of current directory.
+==> Thinking...
+-=-=-=- AI RESPONSE -=-=-=-
+@LIST ./
+
+(a)ccept (r)eset (p)rompt (q)uit? a
+-=-=-=- CMD RESULT -=-=-=-
+List of ./:
+__pycache__
+demo_compile_files
+README.md
+examples
+messages.json
+requirements.txt
+demo_learn_chatgpt
+main.py
+.git
+.gitignore
+
+> Please move entries starts with demo_ into examples/, also remove the demo_ prefix.
+==> Thinking...
+-=-=-=- AI RESPONSE -=-=-=-
+First, let's move the demo_* files into examples/ directory:
+@SHELL mv ./demo_* ./examples/
+
+Now we need to remove the demo_ prefix from all files in examples/ directory:
+@SHELL cd examples/ && for file in demo_*; do mv "$file" "${file/demo_/}"; done
+
+(a)ccept (r)eset (p)rompt (q)uit? a
+-=-=-=- CMD RESULT -=-=-=-
+
+
+
+>          

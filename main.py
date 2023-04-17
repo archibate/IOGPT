@@ -26,7 +26,7 @@ def write_file_content(filename: str, content: str) -> str:
 
 def list_files(directory: str) -> str:
     try:
-        return f'List of {directory}:\n' + '\n'.join(os.listdir(directory))
+        return f'List of directory {directory}:\n' + '\n'.join(os.listdir(directory))
     except FileNotFoundError:
         return f'No such file or directory: {directory}'
     except:
@@ -202,10 +202,10 @@ def compose_hint(result: str, question: str, curfile: str, rounds: int) -> str:
         query = result + '\n' + question
     else:
         query = question
-    if not query:
+    if not query.strip():
         print('==> Got empty message, exiting')
         raise SystemExit(0)
-    if not result:
+    if not result and curfile:
         content += f'\n* Current file: {curfile}'
         # listdir = os.listdir('.')
         # if len(listdir) < 8:
@@ -294,7 +294,8 @@ def createbot(model='gpt-3.5-turbo'):
     return ask
 
 def main():
-    ask = createbot()
+    bot = createbot()
+    curfile = ''
     rounds = 0
     result = ''
     while True:
@@ -302,10 +303,9 @@ def main():
             line = input('> ')
         except EOFError:
             break
-        question = line.rstrip() # Write a header file corresponding to the current file.
-        curfile = 'hello.cpp'
+        question = line.rstrip()
         hint = compose_hint(result, question, curfile, rounds)
-        answer = ask(hint)
+        answer = bot(hint)
         result = process_answer(answer)
         print('-=-=-=- CMD RESULT -=-=-=-')
         print(result)
